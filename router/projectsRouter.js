@@ -1,5 +1,5 @@
 const express = require("express");
-const postDB = require("../data/helpers/projectsDB");
+const db = require("../data/helpers/projectsDB");
 const router = express.Router();
 
 router.get('/api/projects', async (req, res) => {
