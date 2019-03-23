@@ -10,6 +10,15 @@ router.get('/api/projects', async (req, res) => {
         res.status(500).json(error)
     }
 })
+router.get('/api/projects/:id', async (req,res)=>{
+    try{
+        const projects = await db.getById(req.params.id)
+        res.status(200).json(projects)
+    }
+    catch(error){
+        res.status(500).json(error)
+    }
+})
 
 router.post('/api/projects', async (req, res) => {
     try {

@@ -6,9 +6,7 @@ module.exports = {
   },
 
   getById: id => {
-    return db("projects")
-      .where({ id })
-      .first();
+    return db("projects").innerJoin('actions', 'project_id', 'projects.id')
   },
 
   addProjects: post => {
